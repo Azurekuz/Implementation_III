@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html id="main-html">
+    <head>
+        <title>Zoo Manager v1</title>
+        <meta charset="UTF-8"/>
+        <script src="js/uiLib/uiLib.js"></script>
+        <script src="js/zooLIB/ZooLib.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="js/uiLib/uiLibStyle.css">
+        <link rel="stylesheet" type="text/css" href="css/debug.css">
+    </head>
+    <body>
+        <nav id="drawer-nav" class="drawerNav">
+            <div class="nav-options">
+                <ul id="overlay-options-list">
+                    <li class="button" id="all-fed" onclick="areAllFed()"><a>Toggle Feeding</a></li>
+                    <li class="button" id="all-water" onclick="areAllWatered()"><a>Toggle Sprinklers</a></li>
+                    <li class="button" id="all-lock" onclick="areAllLocked()"><a>Toggle Locks</a></li>
+                </ul>
+            </div>
+        </nav>
+        <a class="navToggle" onclick="toggle()">
+            ▲ <br>
+            <b>Master Controls<b>
+        </a>
+        <div class="main-interface">
+            <ul class="zone-map">
+                <li><div class="zone" id="zone-1" onclick="getInfo(0)">
+                    <h1>Zone 1</h1>
+                    <div class="zone-status-icons" id="status-1">
+                        <ul class="status-display">
+                            <li class="status-all-locks"><a><i class="fa fa-lock"></i></a></li>
+                            <li class="status-all-fed"><a><i class="fa fa-cutlery"></i></a></li>
+                            <li class="status-all-water"><a><i class="fa fa-tint"></i></a></li>
+                        </ul>
+                    </div>
+                </div></li>
+                <li><div class="zone" id="zone-2" onclick="getInfo(1)">
+                    <h1>Zone 2</h1>
+                    <div class="zone-status-icons" id="status-2">
+                        <ul class="status-display">
+                            <li class="status-all-locks"><a><i class="fa fa-lock"></i></a></li>
+                            <li class="status-all-fed"><a><i class="fa fa-cutlery"></i></a></li>
+                            <li class="status-all-water"><a><i class="fa fa-tint"></i></a></li>
+                        </ul>
+                    </div>
+                </div></li>
+                <li><div class="zone" id="zone-3" onclick="getInfo(2)">
+                    <h1>Zone 3</h1>
+                    <div class="zone-status-icons" id="status-3">
+                        <ul class="status-display">
+                            <li class="status-all-locks"><a><i class="fa fa-lock"></i></a></li>
+                            <li class="status-all-fed"><a><i class="fa fa-cutlery"></i></a></li>
+                            <li class="status-all-water"><a><i class="fa fa-tint"></i></a></li>
+                        </ul>
+                    </div>
+                </div></li>
+                <li><div class="zone" id="zone-4" onclick="getInfo(3)">
+                    <h1>Zone 4</h1>
+                    <div class="zone-status-icons" id="status-4">
+                        <ul class="status-display">
+                            <li class="status-all-locks"><a><i class="fa fa-lock"></i></a></li>
+                            <li class="status-all-fed"><a><i class="fa fa-cutlery"></i></a></li>
+                            <li class="status-all-water"><a><i class="fa fa-tint"></i></a></li>
+                        </ul>
+                    </div>
+                </div></li>
+                <li><div class="zone" id="zone-5" onclick="getInfo(4)">
+                    <h1>Zone 5</h1>
+                    <div class="zone-status-icons" id="status-5">
+                        <ul class="status-display">
+                            <li class="status-all-locks"><a><i class="fa fa-lock"></i></a></li>
+                            <li class="status-all-fed"><a><i class="fa fa-cutlery"></i></a></li>
+                            <li class="status-all-water"><a><i class="fa fa-tint"></i></a></li>
+                        </ul>
+                    </div>
+                </div></li>
+                <li><div class="zone" id="zone-6" onclick="getInfo(5)">
+                    <h1>Zone 6</h1>
+                    <div class="zone-status-icons" id="status-6">
+                        <ul class="status-display">
+                            <li class="status-all-locks"><a><i class="fa fa-lock"></i></a></li>
+                            <li class="status-all-fed"><a><i class="fa fa-cutlery"></i></a></li>
+                            <li class="status-all-water"><a><i class="fa fa-tint"></i></a></li>
+                        </ul>
+                    </div>
+                </div></li>
+                <li><div class="zone" id="zone-7" onclick="getInfo(6)">
+                    <h1>Zone 7</h1>
+                    <div class="zone-status-icons" id="status-7">
+                        <ul class="status-display">
+                            <li class="status-all-locks"><a><i class="fa fa-lock"></i></a></li>
+                            <li class="status-all-fed"><a><i class="fa fa-cutlery"></i></a></li>
+                            <li class="status-all-water"><a><i class="fa fa-tint"></i></a></li>
+                        </ul>
+                    </div>
+                </div></li>
+                <li><div class="zone" id="zone-8" onclick="getInfo(7)">
+                    <h1>Zone 8</h1>
+                    <div class="zone-status-icons" id="status-8">
+                        <ul class="status-display">
+                            <li class="status-all-locks"><a><i class="fa fa-lock"></i></a></li>
+                            <li class="status-all-fed"><a><i class="fa fa-cutlery"></i></a></li>
+                            <li class="status-all-water"><a><i class="fa fa-tint"></i></a></li>
+                        </ul>
+                    </div>
+                </div></li>
+                <li><div class="zone" id="zone-9" onclick="getInfo(8)">
+                    <h1>Zone 9</h1>
+                    <div class="zone-status-icons" id="status-9">
+                        <ul class="status-display">
+                            <li class="status-all-locks"><a><i class="fa fa-lock"></i></a></li>
+                            <li class="status-all-fed"><a><i class="fa fa-cutlery"></i></a></li>
+                            <li class="status-all-water"><a><i class="fa fa-tint"></i></a></li>
+                        </ul>
+                    </div>
+                </div></li>
+                <li><div class="zone" id="zone-10" onclick="getInfo(9)">
+                    <h1>Zone 10</h1>
+                    <div class="zone-status-icons" id="status-10">
+                        <ul class="status-display">
+                            <li class="status-all-locks"><a><i class="fa fa-lock"></i></a></li>
+                            <li class="status-all-fed"><a><i class="fa fa-cutlery"></i></a></li>
+                            <li class="status-all-water"><a><i class="fa fa-tint"></i></a></li>
+                        </ul>
+                    </div>
+                </div></li>
+            </ul>
+        </div>
+        <div class="zone-overlay">
+            <div class="zone-overlay-back" onclick="dismissInfo()">
+
+            </div>
+            <div class="zone-info" id="none" onclick="nothing()">
+                <h1 id="zone-info-title">Zone XXX</h1>
+                <hr>
+                <p id="zone-info-description">Hi, this is some info on the current zone.</p>
+                <hr>
+                <div class="zone-pens">
+                    <h2>Pens</h2> <a class="button" id="water-mode" onclick="switchTo(2)">Water</a><a class="button" id="feed-mode" onclick="switchTo(1)">Food</a> <a class="button" id="gate-mode" onclick="switchTo(0)">Gates</a><br>
+                    <ul class="pen-list">
+                        <li><a class="pen">Pen 1</a></li>
+                        <li><a class="pen">Pen 2</a></li>
+                        <li><a class="pen">Pen 3</a></li>
+                    </ul><br>
+                    <a class="button" id="lock-all" onclick="contextLock()"><i class="fa fa-unlock-alt"></i> All</a>
+                </div>
+            </div>
+        </div>
+        <script src="js/main.js"></script>
+    </body>
+</html>
